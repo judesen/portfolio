@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %} 
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <article class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <time class=" text-muted">{{ post.author }} | {{ post.created_on }}</time>
+        <p class="card-text ">{{ object.content | safe |linebreaksbr }}</p>
+        <button id="zapBtn" type="button" onclick="sendPayment()">Support with sats &#9889;</button>
+      </div>
+    </article>
+    {% include 'blog/sidebar.html' %}
+  </div>
+</div>
+
+{% endblock content %}
