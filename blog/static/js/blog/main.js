@@ -34,7 +34,7 @@ function lnErrorClose() {
 
 async function recordZap(post_id) {
     var request = new XMLHttpRequest();
-    request.open('POST', post_id + '/zap/', true);
+    request.open('POST', '/' + post_id + '/zap/', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     zapResult = await zap();
     console.log(zapResult);

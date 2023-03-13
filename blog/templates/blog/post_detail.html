@@ -8,7 +8,9 @@
         <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
         <time class=" text-muted">{{ post.author }} | {{ post.created_on }}</time>
         <p class="card-text ">{{ object.content | safe |linebreaksbr }}</p>
-        <button id="zapBtn" type="button" onclick="sendPayment()">Support with sats &#9889;</button>
+        <p>{{post.id}}</p>
+        <button type="button" onclick="recordZap({{post.id}})">Support &#9889;</button>
+        <p>Total zapped: {{post.zaps}}</p>
       </div>
     </article>
     {% include 'blog/sidebar.html' %}
